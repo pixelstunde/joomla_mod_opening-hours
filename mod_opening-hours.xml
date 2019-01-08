@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+    <name>MOD_OPENING-HOURS</name>
+    <creationDate>06.01.2019</creationDate>
+    <author>Christian Friedemann</author>
+    <authorEmail>c.friedemann@pixelstun.de</authorEmail>
+    <authorUrl>https://pixelstun.de</authorUrl>
+    <copyright>2019 pixelstun.de</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <version>1.0</version>
+    <description>MOD_OPENING-HOURS_XML_DESCRIPTION</description>
+
+    <files>
+        <filename module="mod_opening-hours">mod_opening-hours.php</filename>
+        <folder>tmpl</folder>
+        <folder>language</folder>
+        <filename>mod_opening-hours.xml</filename>
+    </files>
+
+    <languages>
+        <language tag="de-DE">language/de-DE/de-DE.mod_opening-hours.ini</language>
+        <language tag="de-DE">language/de-DE/de-DE.mod_opening-hours.sys.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_opening-hours.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_opening-hours.sys.ini</language>
+    </languages>
+
+    <!-- Update servers -->
+    <updateservers>
+        <server type="extension" priority="1" name="opening-hours">https://www.example.com/mod_opening-hours.xml
+        </server>
+    </updateservers>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="monday"
+                        type="text"
+                        label="MOD_OPENING_HOURS_MON"
+                        description="MOD_OPENING_HOURS_MON_DESC"
+                />
+                <field
+                        name="tuesday"
+                        type="text"
+                        label="MOD_OPENING_HOURS_TUE"
+                        description="MOD_OPENING_HOURS_TUE_DESC"
+                />
+                <field
+                        name="wednesday"
+                        type="text"
+                        label="MOD_OPENING_HOURS_WED"
+                        description="MOD_OPENING_HOURS_WED_DESC"
+                />
+                <field
+                        name="thursday"
+                        type="text"
+                        label="MOD_OPENING_HOURS_THU"
+                        description="MOD_OPENING_HOURS_THU_DESC"
+                />
+                <field
+                        name="friday"
+                        type="text"
+                        label="MOD_OPENING_HOURS_FRI"
+                        description="MOD_OPENING_HOURS_FRI_DESC"
+                />
+                <field
+                        name="saturday"
+                        type="text"
+                        label="MOD_OPENING_HOURS_Sat"
+                        description="MOD_OPENING_HOURS_Sat_DESC"
+                />
+                <field
+                        name="sunday"
+                        type="text"
+                        label="MOD_OPENING_HOURS_SUN"
+                        description="MOD_OPENING_HOURS_SUN_DESC"
+                />
+                <field
+                        name="group"
+                        type="checkbox"
+                        label="MOD_OPENING_HOURS_Group"
+                        description="MOD_OPENING_HOURS_group_DESC"
+                        default="true"
+                />
+
+            </fieldset>
+            <fieldset
+                    name="advanced">
+                <field
+                        name="moduleclass_sfx"
+                        type="text"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
