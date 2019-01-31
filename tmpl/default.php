@@ -19,15 +19,14 @@ $friday    = $params->get( 'friday', '' );
 $saturday  = $params->get( 'saturday', '' );
 $sunday    = $params->get( 'sunday', '' );
 
-$group = $params->get( 'group', true );
+$group = $params->get( 'group_days', 1 );
 
-$groups = [];
-if ( $group )
+$groups       = [];
+$days         = [ 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' ];
+$currentGroup = [];
+
+if ( $group === '1' )
 {
-	$days = [ 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' ];
-
-	$currentGroup = [];
-
 	for ( $i = 0; $i < 7; $i ++ )
 	{
 		$d   = $days[$i];
@@ -65,6 +64,16 @@ if ( $group )
 }
 else
 {
+	for ( $i = 0; $i < 7; $i ++ )
+	{
+		$d   = $days[$i];
+		$day = $$d;
+
+		if ( ! empty( $day ) )
+		{
+			$groups[] = [ $i ];
+		}
+	}
 }
 $output = '';
 foreach ( $groups as $element )
@@ -76,7 +85,7 @@ foreach ( $groups as $element )
 	{
 		$outputDays .= '-' . JText::_( 'MOD_OPENING_HOURS_' . strtoupper( substr( $days[$element[1]], 0, 3 ) ) . '_SHORT' );;
 	}
-	$output .= '<span class="day">' . $outputDays . '</span>: ' . $$times . '</span><span class="seperator"></span>';
+	$output .= '<span class="day">' . $outputDays . ':</span> ' . $$times . '<span class="separator"></span></span>';
 }
 ?>
 

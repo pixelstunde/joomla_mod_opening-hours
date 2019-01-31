@@ -76,11 +76,11 @@
                         description="MOD_OPENING_HOURS_SUN_DESC"
                 />
                 <field
-                        name="group"
+                        name="group_days"
                         type="checkbox"
                         label="MOD_OPENING_HOURS_Group"
                         description="MOD_OPENING_HOURS_group_DESC"
-                        default="true"
+                        value="1"
                 />
 
             </fieldset>
